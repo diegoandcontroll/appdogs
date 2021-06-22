@@ -3,6 +3,10 @@ const types = {
   email: {
     regex: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     message: 'fill in a valid email',
+  },
+  password: {
+    regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/,
+    message: 'password between 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter'
   }
   
 }
