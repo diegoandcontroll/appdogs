@@ -7,6 +7,10 @@ const types = {
   password: {
     regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/,
     message: 'password between 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter'
+  },
+  number: {
+    regex: /^\d+$/,
+    message: 'How to number',
   }
   
 }
