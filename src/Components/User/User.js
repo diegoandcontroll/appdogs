@@ -1,10 +1,19 @@
 import React from 'react'
-import styles from './User.module.css';
+import { Routes, Route } from 'react-router-dom';
+import Feed from '../Feed/Feed';
+import UserHeader from './UserHeader';
+import UserPhotoPost from './UserPhotoPost';
+import UserStats from './UserStats';
 const User = () => {
   return (
-    <div>
-      User page
-    </div>
+    <section className="container">
+      <UserHeader />
+      <Routes>
+        <Route path="/" element={<Feed />}/>
+        <Route path="post" element={<UserPhotoPost />}/>
+        <Route path="statistic" element={<UserStats/>}/>
+      </Routes>
+    </section>
   )
 }
 

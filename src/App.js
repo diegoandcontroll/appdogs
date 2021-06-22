@@ -8,11 +8,6 @@ import Login from './Components/Login/Login';
 import User from './Components/User/User';
 import ProtectedRoute from './Components/Helper/ProtectedRoute';
 import './App.css';
-
-
-
-
-
 function App() {
   return (
     <div>
