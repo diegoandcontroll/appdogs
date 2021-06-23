@@ -3,7 +3,8 @@ import { COMMENT_POST } from '../../api';
 import Error from '../../Components/Helper/Error';
 import {ReactComponent as Enviar} from '../../Assets/enviar.svg';
 import useFetch from '../../Hooks/useFetch';
-const PhotoCommentsForm = ({id, setComments }) => {
+import styles from './PhotoCommentForm.module.css';
+const PhotoCommentsForm = ({id, setComments, single }) => {
   const [comment, setComment] = React.useState('');
   const {request, error} = useFetch();
   async function handleSubmit(event){
@@ -16,15 +17,16 @@ const PhotoCommentsForm = ({id, setComments }) => {
     }
   }
   return (
-    <form onSubmit={handleSubmit  }>
+    <form onSubmit={handleSubmit  } className={`${styles.form} ${single ? styles.single : ''}`}>
       <textarea
+        className={styles.textarea}
         id="comment"
         name="comment"
         placeholder="Digite um comentario" 
         value={comment}
         onChange={({target}) => setComment(target.value)}
       />
-      <button><Enviar /></button>
+      <button className={styles.button}><Enviar /></button>
       <Error error={error}/>
     </form>
   )

@@ -3,20 +3,19 @@ import { useNavigate } from 'react-router';
 import { GET_USER, TOKEN_POST, VALIDATE_TOKEN } from './api';
 export const UserContext = React.createContext();
 export const UserStorage = ({children}) => {
+  const navigate = useNavigate();
   const [data, setData] = useState(null);
   const [login, setLogin] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
-
   const userLogout = React.useCallback(async function(){
     setData(null);
     setError(null);
     setLoading(false);
     setLoading(false);
     window.localStorage.removeItem('token');
-    navigate('/login');
-  },[navigate]);
+    window.location.assign('http://localhost:3000/login');
+  },[]);
 
   async function getUser(token){
     const {url, options} = GET_USER(token);
