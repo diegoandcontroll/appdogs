@@ -1,4 +1,4 @@
-div {
+.wrapper div {
   max-width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -23,7 +23,7 @@ code span {
   color: rgba(100%, 100%, 100%, 1);
 }
 
-div {
+.wrapper div {
   background: #000;
 }
 
