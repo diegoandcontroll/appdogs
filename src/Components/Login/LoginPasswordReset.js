@@ -12,7 +12,7 @@ const LoginPasswordReset = () => {
   const [login, setLogin] = React.useState('');
   const [key, setKey] = React.useState('');
   const password = useForm();
-  const {data, error, loading, request} = useFetch();
+  const {error, loading, request} = useFetch();
   React.useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const key = params.get('key');
@@ -34,7 +34,7 @@ const LoginPasswordReset = () => {
     }
   }
   return (
-    <div>
+    <section className="animeLeft">
       <Head title="Resete sua senha"/>
       <h1 className="title">Resete sua senha</h1>
       <form onSubmit={handleSubmit}>
@@ -46,7 +46,7 @@ const LoginPasswordReset = () => {
         )}
       </form>
       <Error error={error}/>
-    </div>
+    </section>
   )
 }
 
